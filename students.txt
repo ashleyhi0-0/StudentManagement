@@ -1,0 +1,7 @@
+Student ID: S52685645
+Name: John Ashley Dulay
+Address: Taytay, Tikling
+Phone: 096640124
+Email: ash@gmail.com
+Courses Enrolled: []
+

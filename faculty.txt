@@ -1,0 +1,14 @@
+Faculty ID: F1
+Name: Admin
+Address: Tikling
+Phone: 029398492
+Department: s
+Position: HEad
+
+Faculty ID: F2
+Name: Clarence Bolibol
+Address: Ortigas, Cainta
+Phone: 034934929
+Department: Mathematics
+Position: Classroom Teacher
+
