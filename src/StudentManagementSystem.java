@@ -7,9 +7,32 @@ import java.io.IOException;
 public class StudentManagementSystem {
     private ArrayList<Student> students = new ArrayList<>();
     private ArrayList<Faculty> facultyMembers = new ArrayList<>();
-    private Scanner scanner = new Scanner(System.in); // Single scanner instance
+    private Scanner scanner = new Scanner(System.in);
 
-    // Register a new student and save details to students.txt
+    public boolean login() {
+        System.out.print("Enter Email: ");
+        String email = scanner.nextLine();
+        System.out.print("Enter Password: ");
+        String password = scanner.nextLine();
+        
+        for (Student student : students) {
+            if (student.getEmail().equals(email) && student.getPassword().equals(password)) {
+                System.out.println("Welcome, " + student.getName());
+                return true;
+            }
+        }
+        
+        for (Faculty faculty : facultyMembers) {
+            if (faculty.getEmail().equals(email) && faculty.getPassword().equals(password)) {
+                System.out.println("Welcome, " + faculty.getName());
+                return true;
+            }
+        }
+        
+        return false; // Invalid login
+    }
+
+
     public void registerStudent() {
         System.out.print("Enter Student Name: ");
         String name = scanner.nextLine();
@@ -18,18 +41,17 @@ public class StudentManagementSystem {
         String address = scanner.nextLine();
 
         System.out.print("Enter Phone Number: ");
-        String phone = scanner.nextLine();
+        String phoneNumber = scanner.nextLine();
 
         System.out.print("Enter Email: ");
         String email = scanner.nextLine();
 
-        System.out.print("Enter Password: ");
-        String password = scanner.nextLine();
-
-        String confirmedPassword;
+        String password;
         while (true) {
+            System.out.print("Enter Password: ");
+            password = scanner.nextLine();
             System.out.print("Re-enter Password: ");
-            confirmedPassword = scanner.nextLine();
+            String confirmedPassword = scanner.nextLine();
             if (password.equals(confirmedPassword)) {
                 System.out.println("Password Confirmed!");
                 break;
@@ -37,14 +59,18 @@ public class StudentManagementSystem {
                 System.out.println("Password does not match! Please try again.");
             }
         }
-        Student newStudent = new Student(name, address, phone, email);
+
+        Student newStudent = new Student(name, address, phoneNumber, email, password);
         students.add(newStudent);
 
         saveStudentToFile(newStudent);
+        System.out.println("Student registered successfully!");
+
+        StudentView sv = new StudentView(newStudent);
+        sv.studentView();
     }
 
     private void saveStudentToFile(Student student) {
-        // Save student information to file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("students.txt", true))) {
             writer.write("Student ID: " + student.getStudentId() + "\n");
             writer.write("Name: " + student.getName() + "\n");
@@ -52,14 +78,12 @@ public class StudentManagementSystem {
             writer.write("Phone: " + student.getPhoneNumber() + "\n");
             writer.write("Email: " + student.getEmail() + "\n");
             writer.write("Courses Enrolled: " + student.getCourses() + "\n\n");
-            System.out.println("Student registered successfully and saved to file!");
         } catch (IOException e) {
             System.out.println("An error occurred while saving student data.");
             e.printStackTrace();
         }
     }
 
-    // Register a new faculty and save details to faculty.txt
     public void registerFaculty() {
         System.out.print("Enter Faculty Name: ");
         String name = scanner.nextLine();
@@ -69,9 +93,23 @@ public class StudentManagementSystem {
     
         System.out.print("Enter Phone Number: ");
         String phone = scanner.nextLine();
-    
-        System.out.print("Enter Password: ");
-        String password = scanner.nextLine();
+
+        System.out.print("Enter Email: ");
+        String email = scanner.nextLine();
+
+        String password;
+        while (true) {
+            System.out.print("Enter Password: ");
+            password = scanner.nextLine();
+            System.out.print("Re-enter Password: ");
+            String confirmedPassword = scanner.nextLine();
+            if (password.equals(confirmedPassword)) {
+                System.out.println("Password Confirmed!");
+                break;
+            } else {
+                System.out.println("Password does not match! Please try again.");
+            }
+        }
     
         System.out.print("Enter Department: ");
         String department = scanner.nextLine();
@@ -79,24 +117,22 @@ public class StudentManagementSystem {
         System.out.print("Enter Position: ");
         String position = scanner.nextLine();
     
-        // Pass the password to the Faculty constructor
-        Faculty newFaculty = new Faculty(name, address, phone, password, department, position);
+        Faculty newFaculty = new Faculty(name, address, phone, email, password, department, position);
         facultyMembers.add(newFaculty);
-    
+
         saveFacultyToFile(newFaculty);
+        System.out.println("Faculty registered successfully!");
     }
     
-
     private void saveFacultyToFile(Faculty faculty) {
-        // Save faculty information to file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("faculty.txt", true))) {
             writer.write("Faculty ID: " + faculty.getFacultyId() + "\n");
             writer.write("Name: " + faculty.getName() + "\n");
             writer.write("Address: " + faculty.getAddress() + "\n");
             writer.write("Phone: " + faculty.getPhoneNumber() + "\n");
+            writer.write("Email: " + faculty.getEmail() + "\n");
             writer.write("Department: " + faculty.getDepartment() + "\n");
             writer.write("Position: " + faculty.getPosition() + "\n\n");
-            System.out.println("Faculty registered successfully and saved to file!");
         } catch (IOException e) {
             System.out.println("An error occurred while saving faculty data.");
             e.printStackTrace();
@@ -104,6 +140,6 @@ public class StudentManagementSystem {
     }
 
     public void close() {
-        scanner.close(); // Close the scanner at the end
+        scanner.close(); 
     }
 }

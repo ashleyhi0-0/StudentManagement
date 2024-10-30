@@ -3,20 +3,19 @@ public class Person {
     private String address;
     private String phoneNumber;
     private String password;
+    private String email;
 
-    // Constructor with parameters
-    public Person(String name, String address, String phoneNumber, String password) {
+    public Person(String name, String address, String phoneNumber, String password, String email) {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.password = password; // Store password
+        this.password = password; 
+        this.email = email;
     }
 
-    // Default constructor
     public Person() {
     }
 
-    // Getters and Setters
     public String getName() { 
         return name; 
     }
@@ -26,11 +25,11 @@ public class Person {
     }
 
     public String getPassword() {
-        return password; // Password getter
+        return password; 
     }
 
     public void setPassword(String password) {
-        this.password = password; // Password setter
+        this.password = password; 
     }
 
     public String getAddress() { 
@@ -47,6 +46,9 @@ public class Person {
 
     public void setPhoneNumber(String phoneNumber) { 
         this.phoneNumber = phoneNumber; 
+    }
+    public String getEmail(){
+        return email;
     }
 
     public void showInfo() {

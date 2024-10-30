@@ -1,18 +1,16 @@
 public class Faculty extends Person {
-    private static int idCounter = 1; // Static counter for unique faculty IDs
-    private final String facultyId; // Final faculty ID to make it immutable
+    private static int idCounter = 1; 
+    private final String facultyId; 
     private String department;
     private String position;
 
-    // Constructor that includes password
-    public Faculty(String name, String address, String phoneNumber, String password, String department, String position) {
-        super(name, address, phoneNumber, password); // Pass the password to Person
-        this.facultyId = "F" + idCounter++; // Prefix 'F' for faculty IDs and increment counter
+    public Faculty(String name, String address, String phoneNumber, String email, String password, String department, String position) {
+        super(name, address, phoneNumber, email, password); 
+        this.facultyId = "F" + idCounter++; 
         this.department = department;
         this.position = position;
     }
 
-    // Getters and Setters
     public String getFacultyId() { 
         return facultyId; 
     }
@@ -33,14 +31,13 @@ public class Faculty extends Person {
         this.position = position;
     }
 
-    // Methods specific to faculty
     public void assignCourse(String course) {
         System.out.println("Assigned " + course + " to " + getName());
     }
 
     @Override
     public void showInfo() {
-        super.showInfo(); // Call Person's showInfo
+        super.showInfo(); 
         System.out.println("Faculty ID: " + facultyId);
         System.out.println("Department: " + department);
         System.out.println("Position: " + position);

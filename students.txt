@@ -5,3 +5,66 @@ Phone: 096640124
 Email: ash@gmail.com
 Courses Enrolled: []
 
+Student ID: S49207537
+Name: John Ashley Dulay
+Address: 1234
+Phone: 09664015109
+Email: ash@email.com
+Courses Enrolled: []
+
+Student ID: S08901593
+Name: Kristine Nicole
+Address: Mandaluyong
+Phone: 096640293
+Email: tine@email.com
+Courses Enrolled: []
+
+Student ID: S65325167
+Name: Clarence Bolibol
+Address: Ortigas, Cainta
+Phone: 0955473823
+Email: bolibol23@gmail.com
+Courses Enrolled: []
+
+Student ID: S24146327
+Name: Angelo Guirit
+Address: Taytay, bayan
+Phone: Taytay, bayan
+Email: garit@gmail.com
+Courses Enrolled: []
+
+Student ID: S15862051
+Name: Jason Nguyen
+Address: Texas, Arlington
+Phone: Texas, Arlington
+Email: jason@email.com
+Courses Enrolled: []
+
+Student ID: S48939155
+Name: Aeron Tomas
+Address: Ortigas, Cainta
+Phone: Ortigas, Cainta
+Email: tomas@gmail.com
+Courses Enrolled: []
+
+Student ID: S00953311
+Name: Daver Vergara
+Address: Bagong Palengke
+Phone: 09348743
+Email: dave@gmail.com
+Courses Enrolled: []
+
+Student ID: S28812264
+Name: Juan Dela Cruz
+Address: Tondo
+Phone: 092328432
+Email: juan@gmail.com
+Courses Enrolled: []
+
+Student ID: S35084430
+Name: Kirby Matibay
+Address: Super Mario World
+Phone: 123456789
+Email: kirby@email.com
+Courses Enrolled: []
+

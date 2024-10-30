@@ -4,7 +4,6 @@ public class Course {
     private int credits;
     private Faculty instructor;
 
-    // Constructor
     public Course(String courseCode, String courseName, int credits, Faculty instructor) {
         this.courseCode = courseCode;
         this.courseName = courseName;

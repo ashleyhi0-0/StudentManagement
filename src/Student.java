@@ -2,25 +2,24 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Student extends Person {
-    private final String studentId; // Final student ID to make it immutable
+    private final String studentId; 
     private String email;
     private ArrayList<String> courses = new ArrayList<>();
 
-    // Constructor
-    public Student(String name, String address, String phoneNumber, String email) {
-        super(name, address, phoneNumber, ""); // Pass empty string for password if not needed
+    
+    public Student(String name, String address, String phoneNumber, String email, String password) {
+        super(name, address, phoneNumber, "", ""); 
         this.studentId = createStudentID(); 
         this.email = email;
     }
 
     private String createStudentID() {
         Random rand = new Random();
-        // Generate a random ID and format it to a string
         int randomStudentId = rand.nextInt(100000000); 
         return String.format("S%08d", randomStudentId); 
     }
 
-    // Getters
+   
     public String getStudentId() { 
         return studentId; 
     }
