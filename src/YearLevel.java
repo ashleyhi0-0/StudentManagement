@@ -1,10 +1,10 @@
-public class Course {
+public class YearLevel {
     private String courseCode;
     private String courseName;
     private int credits;
     private Faculty instructor;
 
-    public Course(String courseCode, String courseName, int credits, Faculty instructor) {
+    public YearLevel(String courseCode, String courseName, int credits, Faculty instructor) {
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.credits = credits;

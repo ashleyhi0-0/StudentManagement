@@ -15,23 +15,20 @@ public class StudentManagementSystem {
         System.out.print("Enter Password: ");
         String password = scanner.nextLine();
         
-        for (Student student : students) {
-            if (student.getEmail().equals(email) && student.getPassword().equals(password)) {
+        for(Student student: students){
+            if(student.getEmail().equals(email)||student.getPassword().equals(password)){
                 System.out.println("Welcome, " + student.getName());
                 return true;
             }
         }
-        
-        for (Faculty faculty : facultyMembers) {
-            if (faculty.getEmail().equals(email) && faculty.getPassword().equals(password)) {
+        for(Faculty faculty: facultyMembers){
+            if(faculty.getEmail().equals(email)||faculty.getPassword().equals(password)){
                 System.out.println("Welcome, " + faculty.getName());
                 return true;
             }
         }
-        
-        return false; // Invalid login
+        return false;
     }
-
 
     public void registerStudent() {
         System.out.print("Enter Student Name: ");

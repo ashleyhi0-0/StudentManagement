@@ -68,3 +68,10 @@ Phone: 123456789
 Email: kirby@email.com
 Courses Enrolled: []
 
+Student ID: S95272777
+Name: Alyssa Gica
+Address: Ortigas, Cainta
+Phone: 09478347323
+Email: gica@gmail.com
+Courses Enrolled: []
+
